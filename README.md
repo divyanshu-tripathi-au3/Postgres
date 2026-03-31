@@ -1,23 +1,51 @@
-# Employee Interview Service
+<!-- /Database : interview
 
-Simple Node.js + Express service with layered architecture (`routes` -> `controllers` -> `models`) and PostgreSQL.
+ connection string: 
 
-## APIs
+Server : 34.255.11.87
 
-- `GET /api/employees`
-  - Query: `SELECT * FROM public.employees ORDER BY id ASC`
-- `GET /api/employees/total-salary`
-  - Query:
-    - `SUM(salary)` as `totalSalary`
-    - `COUNT(salary)` as `salaryCount`
+Username : interview
 
-## Setup
+Password : G5gdrg34tergfdrgdtghrthtyhr
 
-1. Copy env file:
-   - `cp .env.example .env`
-2. Install dependencies:
-   - `npm install`
-3. Run service:
-   - `npm run dev`
+Table Data Structure:
 
-Default port: `3001`
+ 
+
+public.employees
+
+(
+
+    id integer NOT NULL DEFAULT nextval('employees_id_seq'::regclass),
+
+    first_name character varying(50) COLLATE pg_catalog."default" NOT NULL,
+
+    last_name character varying(50) COLLATE pg_catalog."default" NOT NULL,
+
+    salary numeric(12,2),
+
+    CONSTRAINT employees_pkey PRIMARY KEY (id),
+
+    CONSTRAINT employees_salary_check CHECK (salary > 0::numeric)
+
+)
+
+ 
+
+Tasks:
+
+Make an API to return all employees in json
+
+Make an API to return the total of the salary column in json
+
+
+requirement: 
+get Api to fetch all select * feom table
+another get api to fetch total sal of all emp select Count(sal) from table   -->
+
+
+
+2. npm install
+3 npm run dev
+port :3001
+
