@@ -45,7 +45,9 @@ another get api to fetch total sal of all emp select Count(sal) from table   -->
 
 
 
-2. npm install
-3 npm run dev
-port :3001
+1. npm install
+
+2. npm run dev
+
+3. port :3001
 
